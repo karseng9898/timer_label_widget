@@ -54,7 +54,9 @@ class _TimerExamplePageState extends State<TimerExamplePage> {
   }
 
   double get _progress {
-    return 1 - (_timerController.secondsRemaining / _timerController.duration.inSeconds);
+    return 1 -
+        (_timerController.secondsRemaining /
+            _timerController.duration.inSeconds);
   }
 
   @override
@@ -90,8 +92,10 @@ class _TimerExamplePageState extends State<TimerExamplePage> {
                           return CircularProgressIndicator(
                             value: _progress,
                             strokeWidth: 12,
-                            backgroundColor: Colors.white.withValues(alpha: 0.3),
-                            valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
+                            backgroundColor:
+                                Colors.white.withValues(alpha: 0.3),
+                            valueColor: const AlwaysStoppedAnimation<Color>(
+                                Colors.white),
                           );
                         },
                       ),
@@ -121,7 +125,8 @@ class _TimerExamplePageState extends State<TimerExamplePage> {
                     _timerController.startTimer();
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
                     textStyle: const TextStyle(fontSize: 18),
                   ),
                 ),
@@ -132,7 +137,8 @@ class _TimerExamplePageState extends State<TimerExamplePage> {
                     _timerController.pauseTimer();
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
                     textStyle: const TextStyle(fontSize: 18),
                   ),
                 ),
@@ -143,7 +149,8 @@ class _TimerExamplePageState extends State<TimerExamplePage> {
                     _timerController.resumeTimer();
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
                     textStyle: const TextStyle(fontSize: 18),
                   ),
                 ),
@@ -154,7 +161,8 @@ class _TimerExamplePageState extends State<TimerExamplePage> {
                     _timerController.resetTimer();
                   },
                   style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 12),
                     textStyle: const TextStyle(fontSize: 18),
                   ),
                 ),

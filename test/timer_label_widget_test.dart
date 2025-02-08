@@ -7,7 +7,8 @@ import 'package:timer_label_widget/timer_label_widget.dart';
 void main() {
   group('TimerLabelController', () {
     test('initializes with correct time', () {
-      final controller = TimerLabelController(duration: const Duration(seconds: 10));
+      final controller =
+          TimerLabelController(duration: const Duration(seconds: 10));
       expect(controller.secondsRemaining, equals(10));
       expect(controller.timeRemaining, equals('00:10'));
     });
@@ -41,7 +42,8 @@ void main() {
 
     test('resetTimer resets to initial value', () {
       fakeAsync((async) {
-        final controller = TimerLabelController(duration: const Duration(seconds: 10));
+        final controller =
+            TimerLabelController(duration: const Duration(seconds: 10));
         controller.startTimer();
         async.elapse(const Duration(seconds: 4));
         expect(controller.secondsRemaining, equals(6));
@@ -53,7 +55,8 @@ void main() {
 
     test('pauseTimer stops countdown and resumeTimer continues it', () {
       fakeAsync((async) {
-        final controller = TimerLabelController(duration: const Duration(seconds: 10));
+        final controller =
+            TimerLabelController(duration: const Duration(seconds: 10));
         controller.startTimer();
         async.elapse(const Duration(seconds: 3));
         expect(controller.secondsRemaining, equals(7));
@@ -73,7 +76,8 @@ void main() {
     });
 
     test('updateSeconds subtracts elapsed time correctly', () {
-      final controller = TimerLabelController(duration: const Duration(seconds: 10));
+      final controller =
+          TimerLabelController(duration: const Duration(seconds: 10));
       controller.updateSeconds(3);
       expect(controller.secondsRemaining, equals(7));
 
@@ -85,7 +89,8 @@ void main() {
 
   group('TimerLabelWidget', () {
     testWidgets('displays initial time correctly', (WidgetTester tester) async {
-      final controller = TimerLabelController(duration: const Duration(seconds: 10));
+      final controller =
+          TimerLabelController(duration: const Duration(seconds: 10));
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -101,8 +106,10 @@ void main() {
       expect(find.text('00:10'), findsOneWidget);
     });
 
-    testWidgets('updates time display as countdown progresses', (WidgetTester tester) async {
-      final controller = TimerLabelController(duration: const Duration(seconds: 5));
+    testWidgets('updates time display as countdown progresses',
+        (WidgetTester tester) async {
+      final controller =
+          TimerLabelController(duration: const Duration(seconds: 5));
       controller.startTimer();
 
       await tester.pumpWidget(
@@ -130,7 +137,8 @@ void main() {
       expect(find.text('00:00'), findsOneWidget);
     });
 
-    testWidgets('supports hours when alwaysShowHours is true', (WidgetTester tester) async {
+    testWidgets('supports hours when alwaysShowHours is true',
+        (WidgetTester tester) async {
       final controller = TimerLabelController(
         duration: const Duration(minutes: 90), // 1 hour 30 minutes.
         alwaysShowHours: true,

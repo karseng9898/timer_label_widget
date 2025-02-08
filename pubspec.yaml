@@ -1,6 +1,6 @@
 name: timer_label_widget
 description: "A Flutter package that provides a TimerLabel widget that displays a countdown timer."
-version: 1.0.0
+version: 1.0.0+1
 homepage: 'https://github.com/karseng9898/timer_label_widget'
 
 environment:

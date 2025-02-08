@@ -122,7 +122,8 @@ class TimerLabelController extends ChangeNotifier {
   /// Useful when the app resumes from the background. The [elapsedSeconds]
   /// is subtracted from the remaining time, and the value is clamped to zero.
   void updateSeconds(int elapsedSeconds) {
-    _secondsRemaining = (_secondsRemaining - elapsedSeconds).clamp(0, duration.inSeconds);
+    _secondsRemaining =
+        (_secondsRemaining - elapsedSeconds).clamp(0, duration.inSeconds);
     notifyListeners();
     if (_secondsRemaining == 0) {
       _timer?.cancel();
@@ -181,7 +182,8 @@ class TimerLabelWidget extends StatefulWidget {
   State<TimerLabelWidget> createState() => _TimerLabelWidgetState();
 }
 
-class _TimerLabelWidgetState extends State<TimerLabelWidget> with WidgetsBindingObserver {
+class _TimerLabelWidgetState extends State<TimerLabelWidget>
+    with WidgetsBindingObserver {
   DateTime? _pauseTime;
 
   @override
